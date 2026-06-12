@@ -6,113 +6,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para o meu amor ❤️</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+    
+    *{
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 20px;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .card {
+        background: white;
+        width: 100%;
+        max-width: 650px;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+        color: #e63946;
+        margin-bottom: 15px;
+        font-size: 2rem;
+    }
+
+    .gallery {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        scroll-behavior: smooth;
+    }
+
+    .gallery::-webkit-scrollbar{
+        height: 8px;
+    }
+
+    .gallery::-webkit-scrollbar-thumb{
+        background: #e63946;
+        border-radius: 10px;
+    }
+
+    .gallery img {
+        width: 150px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 15px;
+        flex-shrink: 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    p {
+        color: #333;
+        line-height: 1.8;
+        text-align: left;
+        white-space: pre-line;
+        font-size: 1rem;
+    }
+
+    .heart {
+        font-size: 28px;
+        animation: beat 1s infinite;
+        margin: 10px 0;
+    }
+
+    @keyframes beat {
+        0% {
+            transform: scale(1);
         }
 
-        .card {
-            background: white;
-            max-width: 650px;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            animation: fadeIn 1.5s ease;
+        50% {
+            transform: scale(1.2);
         }
 
-        h1 {
-            color: #e63946;
-            margin-bottom: 15px;
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
         }
 
-        .gallery {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            margin-bottom: 20px;
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .footer {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #e63946;
+        font-size: 1.1rem;
+    }
+
+    .btn-galeria{
+        display: inline-block;
+        margin-top: 15px;
+        padding: 12px 20px;
+        background: #e63946;
+        color: white;
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-galeria:hover{
+        background: #c92f3b;
+        transform: scale(1.05);
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px){
+
+        body{
+            padding: 15px;
         }
 
-        .gallery img {
-            width: 150px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
+        .card{
+            padding: 20px;
+            border-radius: 18px;
         }
 
-        .gallery img:hover {
-            transform: scale(1.05);
+        h1{
+            font-size: 1.7rem;
         }
 
-        p {
-            color: #333;
-            line-height: 1.6;
-            text-align: left;
-            white-space: pre-line;
+        .gallery img{
+            width: 120px;
+            height: 170px;
         }
 
-        .heart {
-            font-size: 28px;
-            animation: beat 1s infinite;
-            margin: 10px 0;
-        }
-
-        @keyframes beat {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.2);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .footer {
-            margin-top: 20px;
-            font-weight: bold;
-            color: #e63946;
+        p{
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         .btn-galeria{
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 20px;
-  background: #e63946;
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: bold;
-  transition: 0.3s;
-}
+            width: 100%;
+            text-align: center;
+        }
+    }
 
-.btn-galeria:hover{
-  background: #c92f3b;
-  transform: scale(1.05);
-}
+    @media (max-width: 480px){
+
+        h1{
+            font-size: 1.5rem;
+        }
+
+        .gallery img{
+            width: 100px;
+            height: 150px;
+        }
+
+        p{
+            font-size: 0.9rem;
+        }
+
+        .heart{
+            font-size: 24px;
+        }
+    }
+
     </style>
 </head>
 
